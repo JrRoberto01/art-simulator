@@ -90,11 +90,11 @@
                             <div class="col-lg-4">
                                 <div class="row">
                                     <label class="simple-label">Nº do registro do profissional</label>
-                                    <input class="bottom-border-input" type="numeric" place>
+                                    <input class="bottom-border-input" type="numeric">
                                 </div>
                                 <div class="row">
                                     <label class="simple-label">Nº do registro da empresa</label>
-                                    <input class="bottom-border-input" type="numeric" place>
+                                    <input class="bottom-border-input" type="numeric">
                                 </div>
                                 <div class="row">
                                     <button>Buscar</button>
@@ -138,6 +138,44 @@
                                 <div class="row">
                                     <button style="margin: 20px 0 0 0;">Consultar</button>
                                 </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <section style="margin-top: 20px">
+                        <label>Contratante</label>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="row">
+                                    <label class="simple-label">CPF / CNPJ</label>
+                                    <input class="bottom-border-input" type="text" id="id-contratante">
+                                </div>
+                                <div class="row">
+                                    <label class="simple-label">Nome do contratante</label>
+                                    <input class="bottom-border-input" type="text" id="nome-contratante">
+                                </div>
+                                <div class="row">
+                                    <label class="simple-label">Tipo de Contratante</label>
+                                    <select name="tipo-contratante" id="tipo-contratante">
+                                        <option value="Individual">Opção 1</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="row">
+                                    <div class="col">
+                                        <label class="simple-label">CEP</label>
+                                        <input class="bottom-border-input" type="text" id="cep-contratante">                                    </div>
+                                    </div>
+                                    <div class="col">
+                                        <label class="simple-label">Logradouro</label>
+                                        <select name="logradouro-contratante" id="logradouro-contratante">
+                                            <option value="Individual">Rua</option>
+                                        </select>                                    
+                                    </div>
                             </div>
                         </div>
                     </section>

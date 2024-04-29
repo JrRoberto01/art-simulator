@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body{
     padding: 0;
     margin: 0;
@@ -28,3 +29,35 @@ header .col:last-child{
     justify-content: end;
 }
 
+=======
+body{
+    padding: 0;
+    margin: 0;
+}
+header{
+    background-color: #c8dbf2;
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+header img{
+    width: 300px;
+    height: auto;
+}
+header h1, header h3{
+    font-size: 1em;
+    text-align: center;
+}
+header h1 span{
+    font-size: 2em;
+    font-weight: bolder;
+}
+header .row .col{
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+header .col:last-child{
+    justify-content: end;
+}
+
+>>>>>>> bed309b4330dc5e9fb495c2e74eea7b3526de245

@@ -4,8 +4,6 @@ require __DIR__ . "/vendor/autoload.php";
 use Dompdf\Dompdf;
 use Dompdf\options;
 
-$name = $_POST["name"];
-
 //$html = "<h1>$name</h1>";
 
 $options = new Options;

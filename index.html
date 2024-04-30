@@ -19,7 +19,7 @@
                             <img src="_img/logo-Crea-RJ-color.png">
                         </div>
                     <div class="col">
-                            <h1><span>ART</span><br>SIMULADOR DE ANOTAÇÃO DE RESPONSABILIDADE TÉCNICA</h1>
+                            <h1><span>ART</span><br>SIMULADOR DE ANOTAÇÃO DE RESPONSABILIDADE TÉCNICA<br>Disciplina: Tópicos Especiais em Engenharia Civil</h1>
                         </div>
                         <div class="col">
                             <h3 id="refNumber"></h3>
@@ -30,9 +30,163 @@
         </div>
         <div class="row">
             <form method="post" action="art-generator.php">
-                <label for="name">Nome</label>
-                <input type="text" name="name" id="name">
+                <div class="row">
+                    <div class="col">
+                        <h3>Tipo de Registro</h3>
+                        <input type="radio" id="tipo-registro" name="tipo-registro" value="Obra ou Serviço">
+                        <label for="tipo-registro">Obra ou Serviço</label><br>
+                        <input type="radio" id="tipo-registro" name="tipo-registro" value="Desempenho de Cargo ou função">
+                        <label for="tipo-registro">Desempenho de Cargo ou função</label><br>
+                        <input type="radio" id="tipo-registro" name="tipo-registro" value="Múltipla">
+                        <label for="tipo-registro">Multipla</label>
+                    </div>
+                    <div class="col">
+                        <h3>Motivo do Registro</h3>
+                        <input type="radio" id="motivo-registro" name="motivo-registro" value="Novo Contrato">
+                        <label for="motivo-registro">Novo Contrato</label><br>
+                        <input type="radio" id="motivo-registro" name="motivo-registro" value="Oficio/Notificação">
+                        <label for="motivo-registro">Oficio/Notificação</label><br>
+                        <input type="radio" id="motivo-registro" name="motivo-registro" value="Notificação">
+                        <label for="motivo-registro">Notificação</label>
+                    </div>
+                    <div class="col">
+                        <h3>Forma de Registro</h3>
+                        <input type="radio" id="forma-registro" name="forma-registro" value="Inicial">
+                        <label for="forma-registro">Inicial</label><br>
+                        <input type="radio" id="forma-registro" name="forma-registro" value="Complementar">
+                        <label for="forma-registro">Complementar</label><br>
+                        <input type="radio" id="forma-registro" name="forma-registro" value="Substituição">
+                        <label for="forma-registro">Substituição</label><br>
+                        <input type="text" id="art-principal" name="art-principal" placeholder="Nº da ART Principal">
+                    </div>
+                    <div class="col">
+                        <h3>Participação Técnica</h3>
+                        <input type="radio" id="part-tecnica" name="part-tecnica" value="Substituição">
+                        <label for="part-tecnica">Individual</label><br>
+                        <input type="radio" id="part-tecnica" name="part-tecnica" value="Co Autor">
+                        <label for="part-tecnica">Co Autor</label><br>
+                        <input type="radio" id="part-tecnica" name="part-tecnica" value="Co Responsável">
+                        <label for="part-tecnica">Co Responsável</label><br>
+                        <input type="radio" id="part-tecnica" name="part-tecnica" value="Equipe">
+                        <label for="part-tecnica">Equipe</label><br>
+                    </div>
+                </div>
+                <div class="row">
+                    <h3>Responsável Técnico</h3>
+                    <div class="row">
+                        <div class="col">
+                            <label for="reg-profissional">Registro Profissional</label><br>
+                            <input type="text" id="reg-profissional" name="reg-profissional">
+                        </div>
+                        <div class="col">
+                            <label for="nome-profissional">Nome do Profissional</label><br>
+                            <input type="text" id="nome-profissional" name="nome-profissional">
+                        </div>
+                        <div class="col"></div>
+                        <div class="col"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label>Há Prof. Co-responsável?</label><br>
+                            <input type="radio" id="prof-coresp" name="prof-coresp">
+                            <label for="prof-coresp">Sim</label><br>
+                            <input type="radio" id="prof-coresp" name="prof-coresp">
+                            <label for="prof-coresp">Não</label><br>
+                        </div>
+                        <div class="col">
+                            <label>Há Prof. de empresa vinculada?</label><br>
+                            <input type="radio" id="prof-emp-vinc" name="prof-emp-vinc">
+                            <label for="prof-emp-vinc">Sim</label><br>
+                            <input type="radio" id="prof-emp-vinc" name="prof-emp-vinc">
+                            <label for="prof-emp-vinc">Não</label><br>
+                        </div>
+                        <div class="col">
+                            <label for="cod-ent-class">Cód. de entidade de classe</label><BR>
+                            <select name="cod-ent-class">
+                                <option value="ABENC">ABENC</option>
+                                <option value="AEVR">AEVR</option>
+                                <option value="ASSEA">ASSEA</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="num-reg-emp">Nº de registro da empresa</label>
+                            <input type="text" id="num-reg-emp" name="num-reg-emp">
+                        </div>
+                        <div class="col">
+                            <label for="nome-empresa">Nome da empresa</label>
+                            <input type="text" id="nome-empresa" name="nome-empresa">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <h3>Contratante</h3>
+                    <div class="row">
+                        <div class="col">
+                            <label for="nome-contratante">Nome do contratante</label>
+                            <input type="text" id="nome-contratante" name="nome-contratante">
+                        </div>
+                        <div class="col">
+                            <label for="id-contratante">CPF/CNPJ</label>
+                            <input type="text" id="id-contratante" name="id-contratante">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="end-contratante">Endereço</label>
+                            <input type="text" id="end-contratante" name="end-contratante">
+                        </div>
+                        <div class="col">
+                            <label for="num-contratante">Nº</label>
+                            <input type="text" id="num-contratante" name="num-contratante" maxlength="6">
+                        </div>
+                        <div class="col">
+                            <label for="compl-contratante">Complemento</label>
+                            <input type="text" id="compl-contratante" name="compl-contratante">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="bairro-contratante">Bairro</label>
+                            <input type="text" id="bairro-contratante" name="bairro-contratante">
+                        </div>
+                        <div class="col">
+                            <label for="cidade-contratante">Município</label>
+                            <input type="text" id="cidade-contratante" name="cidade-contratante">
+                        </div>
+                        <div class="col">
+                            <label for="uf-contratante">UF</label>
+                            <input type="text" id="uf-contratante" name="uf-contratante" maxlength="2">
+                        </div>
+                        <div class="col">
+                            <label for="cep-contratante">CEP</label>
+                            <input type="text" id="cep-contratante" name="cep-contratante" max="9">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <h3>Dados de Contrato</h3>
+                    <div class="row">
+                        <div class="col">
+                            <label for="num-contrato">Nº Contrato</label>
+                            <input type="text" id="num-contrato" name="num-contrato">
+                        </div>
+                        <div class="col">
+                            <label for="ramo">Ramo</label>
+                            <select name="ramo">
+                                <option value="Engenharia Civil">Engenharia Civil - 1101</option>
+                                <option value="Engenharia Industrial Mod. Civil">Engenharia Industrial Mod. Civil - 1109</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <label for="atv-tecnica">Atividade Técnica</label>
+                        </div>
+                        <div class="col">
 
+                        </div>
+                    </div>
+                </div>
                 <button>Gerar ART</button>
             </form>
         </div>

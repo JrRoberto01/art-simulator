@@ -34,7 +34,7 @@
                     <label for="name">Nome do Profissional</label><br>
                     <input type="text" id="name" name="name">
                 </div>
-                <!--<div class="row">
+                <div class="row">
                     <div class="col">
                         <h3>Tipo de Registro</h3>
                         <input type="radio" id="tipo-registro" name="tipo-registro" value="Obra ou Serviço">
@@ -173,24 +173,125 @@
                     <h3>Dados de Contrato</h3>
                     <div class="row">
                         <div class="col">
-                            <label for="num-contrato">Nº Contrato</label>
+                            <label for="num-contrato">Nº Contrato</label><br>
                             <input type="text" id="num-contrato" name="num-contrato">
                         </div>
                         <div class="col">
-                            <label for="ramo">Ramo</label>
+                            <label for="ramo">Ramo</label><br>
                             <select name="ramo">
                                 <option value="Engenharia Civil">Engenharia Civil - 1101</option>
                                 <option value="Engenharia Industrial Mod. Civil">Engenharia Industrial Mod. Civil - 1109</option>
                             </select>
                         </div>
                         <div class="col">
-                            <label for="atv-tecnica">Atividade Técnica</label>
+                            <label for="atv-tecnica">Atividade Técnica</label><br>
+                            <select name="atv-tecnica">
+                                <option value="valor 1">Opção 1</option>
+                                <option value="valor 2">Opção 1</option>
+                            </select>
                         </div>
                         <div class="col">
-
+                            <label for="espec-atv">Atividade Técnica</label><br>
+                            <select name="espec-atv">
+                                <option value="valor 1">Opção 1</option>
+                                <option value="valor 2">Opção 1</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <label for="compl-atv">Atividade Técnica</label><br>
+                            <select name="compl-atv">
+                                <option value="valor 1">Opção 1</option>
+                                <option value="valor 2">Opção 1</option>
+                            </select>
                         </div>
                     </div>
-                </div>-->
+                    <div class="row">
+                        <div class="col">
+                            <label for="quantidade">Quantidade</label><br>
+                            <input type="number" id="quantidade" name="quantidade">
+                        </div>
+                        <div class="col">
+                            <label for="num-pav">Nº Pav.</label><br>
+                            <input type="number" id="num-pav" name="num-pav">
+                        </div>
+                        <div class="col">
+                            <label for="data-inicio">Data de Início</label>
+                            <input type="date" name="data-inicio" id="data-inicio">
+                        </div>
+                        <div class="col">
+                            <label for="prazo-contrato">Prazo de Contrato</label><br>
+                            <input type="text" id="prazo-contrato" name="prazo-contrato">
+                        </div>
+                        <div class="col">
+                            <label for="nhhj">NHHJ/T</label><br>
+                            <input type="text" id="nhhj" name="nhhj">
+                        </div>
+                        <div class="col">
+                            <label for="valor-contrato">Valor de contrato/honorários</label><br>
+                            <input type="text" id="valor-contrato" name="valor-contrato">
+                        </div>
+                        <div class="col">
+                            <label for="salario">Salário</label><br>
+                            <input type="text" id="salario" name="salario">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label for="descricao">Descrição / Informações Complementares</label>
+                        <textarea rows="5"></textarea>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="end-contrato">Endereço</label><br>
+                            <input type="text" id="end-contrato" name="end-contrato">
+                        </div>
+                        <div class="col">
+                            <label for="end-num-contrato">Nº</label><br>
+                            <input type="text" id="end-num-contrato" name="end-num-contrato">
+                        </div>
+                        <div class="col">
+                            <label for="compl-contrato">Complemento</label><br>
+                            <input type="text" id="compl-contrato" name="compl-contrato">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="bairro-contrato">Bairro</label><br>
+                            <input type="text" id="bairro-contrato" name="bairro-contrato">
+                        </div>
+                        <div class="col">
+                            <label for="cidade-contrato">Município</label><br>
+                            <input type="text" id="cidade-contrato" name="cidade-contrato">
+                        </div>
+                        <div class="col">
+                            <label for="uf-contrato">UF</label><br>
+                            <input type="text" id="uf-contrato" name="uf-contrato" maxlength="2">
+                        </div>
+                        <div class="col">
+                            <label for="cep-contrato">CEP</label><br>
+                            <input type="text" id="cep-contrato" name="cep-contrato" maxlength="9">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <input type="checkbox" required>
+                            <p>Declaro o cumprimento das normas da ABNT referentes a acessibilidade em atendimento ao parágrafo 1.º art 11 do Decreto 5.296/2004.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="data-art">Data</label><br>
+                            <input type="date" id="data-art" name="data-art">
+                        </div>
+                        <div class="col">
+                            <label for="prof-contratado">Profissional Contratado</label><br>
+                            <input type="text" id="prof-contratado" name="prof-contratado">
+                        </div>
+                        <div class="col">
+                            <label for="contratante">Contratante</label><br>
+                            <input type="text" value="Contratante" disabled>
+                        </div>
+                    </div>
+                </div>
                 <button>Gerar ART</button>
             </form>
         </div>

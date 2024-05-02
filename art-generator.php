@@ -6,6 +6,7 @@ use Dompdf\options;
 
 //Variaveis
 $nome_profissional = $_POST["nome-profissional"];
+$atividade = $_POST["atividade"];
 
 $options = new Options;
 $options-> setChroot(__DIR__);
@@ -18,7 +19,7 @@ $dompdf-> addInfo("Author", "Simulador ART UNIVASSOURAS");
 $html = file_get_contents("art-template.html");
 
 //Replaces
-$html = str_replace(["{{ nome-profissional }}"], [$nome_profissional], $html);
+$html = str_replace(["{{ nome-profissional }}", "{{ atividade }}"], [$nome_profissional, $atividade], $html);
 $dompdf-> loadHtml($html);
 
 //$dompdf-> loadHtmlFile("art-template.html");

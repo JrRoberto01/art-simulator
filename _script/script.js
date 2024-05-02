@@ -139,6 +139,7 @@ preencherDropdown("ramo", ramo);
 preencherDropdown("atividade", atividade);
 preencherDropdown("espec-atv", especificacao_atividade);
 preencherDropdown("compl-atv", complemento);
+
 function initialConfig(){
     document.getElementById('refNumber').innerText = (`Nº ${refNumber}`)
 }

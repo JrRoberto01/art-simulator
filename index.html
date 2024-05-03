@@ -49,9 +49,10 @@
                         <input type="radio" id="motivo-registro" name="motivo-registro" value="Novo Contrato">
                         <label for="motivo-registro">Novo Contrato</label><br>
                         <input type="radio" id="motivo-registro" name="motivo-registro" value="Oficio/Notificação">
-                        <label for="motivo-registro">Oficio/Notificação</label><br>
+                        <label for="motivo-registro">Oficio</label><br>
                         <input type="radio" id="motivo-registro" name="motivo-registro" value="Notificação">
-                        <label for="motivo-registro">Notificação</label>
+                        <label for="motivo-registro">Notificação</label><br>
+                        <input type="text" id="num-oficio" name="num-oficio" placeholder="Nº">
                     </div>
                     <div class="col">
                         <h3>Forma de Registro</h3>
@@ -80,7 +81,7 @@
                     <div class="row">
                         <div class="col">
                             <label for="reg-profissional">Registro Profissional</label><br>
-                            <input type="text" id="reg-profissional" name="reg-profissional">
+                            <input type="text" id="reg-profissional" name="reg-profissional" maxlength="10">
                         </div>
                         <div class="col">
                             <label for="nome-profissional">Nome do Profissional</label><br>
@@ -181,18 +182,22 @@
                             </select>
                         </div>
                         <div class="col">
-                            <label for="atividade">Atividade Técnica</label><br>
-                            <select name="atividade" id="atividade">
-                            </select>
+                            <label for="atividade1">Atividade Técnica</label><br>
+                            <input class="form-small" type="text" id="atividade1" name="atividade1"><span>/</span>
+                            <input class="form-small" type="text" name ="atividade2" id="atividade2"><span>/</span>
+                            <input class="form-small" type="text" id="atividade3" name="atividade3">
                         </div>
                         <div class="col">
-                            <label for="espec-atv">Especificação da Atividade</label><br>
-                            <select name="espec-atv" id="espec-atv">
-                            </select>
+                            <label for="espec-atv1">Especificação da Atividade</label><br>
+                            <input class="form-small" type="text" id="espec-atv1" name="espec-atv1"><span>/</span>
+                            <input class="form-small" type="text" name ="espec-atv2" id="espec-atv2"><span>/</span>
+                            <input class="form-small" type="text" id="espec-atv3" name="espec-atv3">
                         </div>
                         <div class="col">
-                            <label for="compl-atv">Atividade Técnica</label><br>
-                            <select name="compl-atv" id="compl-atv"></select>
+                            <label for="compl-atv1">Compl. da atividade</label><br>
+                            <input class="form-small" type="text" id="compl-atv1" name="compl-atv1"><span>/</span>
+                            <input class="form-small" type="text" name ="compl-atv2" id="compl-atv2"><span>/</span>
+                            <input class="form-small" type="text" id="compl-atv3" name="compl-atv3">
                         </div>
                     </div>
                     <div class="row">

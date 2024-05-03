@@ -125,7 +125,7 @@ var complemento = [
     "Viabilidade",
     "Outros"];
 
-function preencherDropdown(dropdown, lista) {
+/*function preencherDropdown(dropdown, lista) {
     var select = document.getElementById(dropdown);
     lista.forEach(function(item) {
         var option = document.createElement("option");
@@ -138,7 +138,7 @@ preencherDropdown("entidade-classe", lista_ent_classe);
 preencherDropdown("ramo", ramo);
 preencherDropdown("atividade", atividade);
 preencherDropdown("espec-atv", especificacao_atividade);
-preencherDropdown("compl-atv", complemento);
+preencherDropdown("compl-atv", complemento);*/
 
 function initialConfig(){
     document.getElementById('refNumber').innerText = (`Nº ${refNumber}`)

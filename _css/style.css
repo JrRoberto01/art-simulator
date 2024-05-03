@@ -29,4 +29,8 @@ header .col:last-child{
     font-size: 1.5em;
     align-items: center;
 }
-
+.form-small{
+    width: 20%;
+    border: none;
+    border-bottom: 1px solid #000;
+}

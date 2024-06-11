@@ -11,6 +11,9 @@ header img{
     width: 300px;
     height: auto;
 }
+#logo-vassouras{
+    width: 100px;
+}
 header h1, header h3{
     font-size: 1em;
     text-align: center;

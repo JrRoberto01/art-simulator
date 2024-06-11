@@ -7,6 +7,7 @@ use Dompdf\options;
 //Variaveis
 date_default_timezone_set('America/Sao_Paulo');
 $data = date('m/d/Y', time());
+$numero_art = random_int(100000000, 999999999);
 $nome_profissional = $_POST["nome-profissional"];
 $reg_profissional = $_POST["reg-profissional"];
 $nome_empresa = $_POST["nome-empresa"];
@@ -45,6 +46,7 @@ $html = file_get_contents("art-template.html");
 
 //Replaces
 $html = str_replace([
+    "{{ numero-art }}",
     "{{ nome-profissional }}", 
     "{{ reg-profissional }}",
     "{{ nome-empresa }}",
@@ -72,6 +74,7 @@ $html = str_replace([
     "{{ data-celebrado }}"
     ], 
     [
+    $numero_art,
     $nome_profissional,
     $reg_profissional,
     $nome_empresa,

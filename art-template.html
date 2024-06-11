@@ -52,7 +52,9 @@
                 </div>
             </td>
             <td>
-                <h3><br>CREA-RJ</h3>
+                <h3><br>CREA-RJ<br>
+                ART de obra ou serviço<br>
+                <span id="refNumber">{{  }}</span></h3>
             </td>
         </table>
     </header>
@@ -60,16 +62,15 @@
         <table class="content">
             <caption>1. Responsável Técnico</caption>
             <tr>
-                <td>Título Profissional: {{ nome-profissional }}</td>
-                <td>RNP: 9999999999</td>
+                <td colspan="4">{{ nome-profissional }}</td>
             </tr>
             <tr>
-                <td></td>
-                <td>Registro: 9999999999</td>
+                <td colspan="2">Título Profissional: Engenheiro Civil</td>
+                <td colspan="2">RNP: {{ reg-profissional }}</td>
             </tr>
             <tr>
-                <td>Empresa Contratada: Universidade de Vassouras</td>
-                <td>Registro: 9999999999</td>
+                <td colspan="2">Empresa Contratada: {{ nome-empresa }}</td>
+                <td colspan="2">Registro: {{ num-reg-emp }}</td>
             </tr>
         </table>
     </section>
@@ -77,28 +78,28 @@
         <table class="content">
             <caption>2. Dados do contrato</caption>
             <tr>
-                <td colspan="2">Contratante: Roberto Júnior de Carvalho Botelho</td>
-                <td colspan="2">CPF/CNPJ: 9999999999</td>
+                <td colspan="2">Contratante: {{ nome-contratante }}</td>
+                <td colspan="2">CPF/CNPJ: {{ id-contratante }}</td>
             </tr>
             <tr>
-                <td>Complemento: Casa</td>
+                <td>Complemento: {{ compl-contratante }}</td>
                 <td></td>
-                <td>Bairro: Morro Azul</td>
-                <td>Nº: 1234</td>
+                <td>Bairro: {{ bairro-contratante }}</td>
+                <td>Nº: {{ num-contratante }}</td>
             </tr>
             <tr>
-                <td colspan="2">Cidade: Engenheiro Paulo de Frontin</td>
-                <td>UF: RJ</td>
-                <td>CEP: 26650-000</td>
+                <td colspan="2">Cidade: {{ cidade-contratante }}</td>
+                <td>UF: {{ uf-contratante }}</td>
+                <td>CEP: {{ cep-contratante }}</td>
             </tr>
             <tr>
-                <td>Contrato: </td>
-                <td>Celebrado em: 29/04/2024</td>
-                <td colspan="2">Tipo de Contratante: Prestador de Serviços</td>
+                <td colspan="2">Contrato: {{ num-contrato }}</td>
+                <td colspan="2">Celebrado em: {{ data-art }}</td>
+                <!--<td colspan="2">Tipo de Contratante: Prestador de Serviços</td>-->
             </tr>
             <tr>
-                <td>Valor do Contrato: R$9.900.000,00</td>
-                <td colspan="3">Ação Institucional: Empresa top de se ver</td>
+                <td colspan="4">Valor do Contrato: R$ {{ valor-contrato }}</td>
+                <!--<td colspan="3">Ação Institucional: Empresa top de se ver</td>-->
             </tr>
         </table>
     </section>
@@ -106,27 +107,27 @@
         <table class="content">
             <caption>3. Dados da Obra/Serviço</caption>
             <tr>
-                <td>Complemento: Casa</td>
+                <td>Complemento: {{ compl-contrato }}</td>
                 <td></td>
-                <td>Bairro: Morro Azul</td>
-                <td>Nº: 1234</td>
+                <td>Bairro: {{ bairro-contrato }}</td>
+                <td>Nº: {{ end-num-contrato }}</td>
             </tr>
             <tr>
-                <td>Cidade: Engenheiro Paulo de Frontin</td>
-                <td>UF: RJ</td>
-                <td colspan="2">CEP: 26650-000</td>
+                <td>Cidade: {{ cidade-contrato }}</td>
+                <td>UF: {{ uf-contrato }}</td>
+                <td colspan="2">CEP: {{ cep-contrato }}</td>
             </tr>
             <tr>
-                <td>Data de início: 29/04/2024</td>
-                <td colspan="2">Previsão de término: 31/04/2024</td>
+                <td colspan="2">Data de início: {{ data-inicio }}</td>
+                <td colspan="2">Previsão de término: {{ prazo-contrato }}</td>
             </tr>
-            <tr>
+            <!--<tr>
                 <td colspan="2">Finalidade: Finalidade do projeto</td>
                 <td colspan="2">Código: 999999 MPOG</td>
-            </tr>
+            </tr>-->
             <tr>
-                <td colspan="2">Proprietário: Roberto Júnior de Carvalho Botelho</td>
-                <td colspan="2">CPF/CNPJ: 9999999999</td>
+                <td colspan="4">Proprietário: {{ nome-contratante }}</td>
+                <!--<td colspan="2">CPF/CNPJ: 9999999999</td>-->
             </tr>
         </table>
     </section>
@@ -145,7 +146,7 @@
         <table class="content">
             <caption>5. Observações</caption>
             <tr>
-                <td colspan="4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae aut, ratione eius consequuntur nihil voluptate autem quas, non temporibus placeat quod amet labore ut harum neque? Reiciendis tempora vel distinctio.</td>
+                <td colspan="4">{{ descricao }}</td>
             </tr>
         </table>
     </section>

@@ -13,7 +13,7 @@
     <div class="container-fluid">
         <div class="row">
             <header>
-                <div class="container-fluid">
+                <div class="container">
                     <div class="row">
                         <div class="col">
                             <img src="_img/logo-Crea-RJ-color.png">
@@ -28,273 +28,288 @@
                 </div>
             </header>
         </div>
-        <div class="row">
-            <form method="post" action="art-generator.php">
-                <div class="col">
-                    <label for="name">Nome do Profissional</label><br>
-                    <input type="text" id="name" name="name">
+        <div class="container">
+            <div class="row">
+                <form method="post" action="art-generator.php">
+                    <div class="row">
+                        <div class="col fisrt-line">
+                            <h3>Tipo de Registro</h3>
+                            <input type="radio" id="tipo-registro" name="tipo-registro" value="Obra ou Serviço">
+                            <label for="tipo-registro">Obra ou Serviço</label><br>
+                            <input type="radio" id="tipo-registro" name="tipo-registro" value="Desempenho de Cargo ou função">
+                            <label for="tipo-registro">Desempenho de Cargo ou função</label><br>
+                            <input type="radio" id="tipo-registro" name="tipo-registro" value="Múltipla">
+                            <label for="tipo-registro">Multipla</label>
+                        </div>
+                        <div class="col fisrt-line">
+                            <h3>Motivo do Registro</h3>
+                            <input type="radio" id="motivo-registro" name="motivo-registro" value="Novo Contrato" checked>
+                            <label for="motivo-registro">Novo Contrato</label><br>
+                            <input type="radio" id="motivo-registro" name="motivo-registro" value="Oficio/Notificação">
+                            <label for="motivo-registro">Oficio</label><br>
+                            <input type="radio" id="motivo-registro" name="motivo-registro" value="Notificação">
+                            <label for="motivo-registro">Notificação</label><br>
+                            <input type="text" id="num-oficio" name="num-oficio" placeholder="Nº">
+                        </div>
+                        <div class="col fisrt-line">
+                            <h3>Forma de Registro</h3>
+                            <input type="radio" id="forma-registro" name="forma-registro" value="Inicial">
+                            <label for="forma-registro">Inicial</label><br>
+                            <input type="radio" id="forma-registro" name="forma-registro" value="Complementar">
+                            <label for="forma-registro">Complementar</label><br>
+                            <input type="radio" id="forma-registro" name="forma-registro" value="Substituição" checked>
+                            <label for="forma-registro">Substituição</label><br>
+                            <input type="text" id="art-principal" name="art-principal" placeholder="Nº da ART Principal">
+                        </div>
+                        <div class="col fisrt-line">
+                            <h3>Participação Técnica</h3>
+                            <input type="radio" id="part-tecnica" name="part-tecnica" value="Individual">
+                            <label for="part-tecnica">Individual</label><br>
+                            <input type="radio" id="part-tecnica" name="part-tecnica" value="Co Autor">
+                            <label for="part-tecnica">Co Autor</label><br>
+                            <input type="radio" id="part-tecnica" name="part-tecnica" value="Co Responsável">
+                            <label for="part-tecnica">Co Responsável</label><br>
+                            <input type="radio" id="part-tecnica" name="part-tecnica" value="Equipe" checked>
+                            <label for="part-tecnica">Equipe</label><br>
+                            <input type="text" id="art-part-tec" name="art-part-tec" placeholder="Nº ART de Part. Técnica">
+                        </div>
+                    </div>
+                    <div class="row other-input">
+                        <h3>Responsável Técnico</h3>
+                        <table>
+                            <tr>
+                                <td>
+                                    <label for="reg-profissional">Registro Profissional</label><br>
+                                    <input type="text" id="reg-profissional" name="reg-profissional" maxlength="10">
+                                </td>
+                                <td colspan="3">
+                                    <label for="nome-profissional">Nome do Profissional</label><br>
+                                    <input style="width: 100%;" type="text" id="nome-profissional" name="nome-profissional">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <label>Há Prof. Co-responsável?</label><br>
+                                    <input type="radio" id="prof-coresp" name="prof-coresp">
+                                    <label class="opt" for="prof-coresp">Sim</label><br>
+                                    <input type="radio" id="prof-coresp" name="prof-coresp">
+                                    <label class="opt" for="prof-coresp">Não</label><br>
+                                </td>
+                                <td>
+                                    <label>Há Prof. de empresa vinculada?</label><br>
+                                    <input type="radio" id="prof-emp-vinc" name="prof-emp-vinc">
+                                    <label class="opt" for="prof-emp-vinc">Sim</label><br>
+                                    <input type="radio" id="prof-emp-vinc" name="prof-emp-vinc">
+                                    <label class="opt" for="prof-emp-vinc">Não</label><br>
+                                </td>
+                                <td>
+                                    <label for="cod-ent-class">Cód. de entidade de classe</label><br>
+                                    <select name="cod-ent-class" id="entidade-classe">
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="num-reg-emp">Nº de registro da empresa</label><br>
+                                    <input type="text" id="num-reg-emp" name="num-reg-emp">
+                                </td>
+                                <td colspan="3">
+                                    <label for="nome-empresa">Nome da empresa</label><br>
+                                    <input style="width: 100%;" type="text" id="nome-empresa" name="nome-empresa">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="row other-input">
+                        <h3>Contratante</h3>
+                        <table>
+                            <tr>
+                                <td colspan="1">
+                                    <label for="id-contratante">CPF/CNPJ</label><br>
+                                    <input type="text" id="id-contratante" name="id-contratante">
+                                </td>
+                                <td colspan="3">
+                                    <label for="nome-contratante">Nome do contratante</label>
+                                    <input style="width: 100%;" type="text" id="nome-contratante" name="nome-contratante">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <label for="end-contratante">Endereço</label><br>
+                                    <input style="width: 90%;" type="text" id="end-contratante" name="end-contratante">
+                                </td>
+                                <td>
+                                    <label for="num-contratante">Nº</label><br>
+                                    <input type="text" id="num-contratante" name="num-contratante" maxlength="6">
+                                </td>
+                                <td>
+                                    <label for="compl-contratante">Complemento</label><br>
+                                    <input type="text" id="compl-contratante" name="compl-contratante">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="bairro-contratante">Bairro</label><br>
+                                    <input style="width: 90%;" type="text" id="bairro-contratante" name="bairro-contratante">
+                                </td>
+                                <td>
+                                    <label for="cidade-contratante">Município</label><br>
+                                    <input style="width: 90%;" type="text" id="cidade-contratante" name="cidade-contratante">
+                                </td>
+                                <td>
+                                    <label for="uf-contratante">UF</label><br>
+                                    <input type="text" id="uf-contratante" name="uf-contratante" maxlength="2">
+                                </td>
+                                <td>
+                                    <label for="cep-contratante">CEP</label><br>
+                                    <input type="text" id="cep-contratante" name="cep-contratante" max="9">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="row other-input">
+                        <h3>Dados de Contrato</h3>
+                        <table>
+                            <tr>
+                                <td>
+                                    <label for="num-contrato">Nº Contrato</label><br>
+                                    <input type="text" id="num-contrato" name="num-contrato">
+                                </td>
+                                <td>
+                                    <label for="ramo">Ramo</label><br>
+                                    <select name="ramo" id = "ramo">
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="atividade1">Atividade Técnica</label><br>
+                                    <span class="list-atv-btn" onclick="abrirModalAtv()">?</span>
+                                    <input class="form-small" type="text" id="atividade1" name="atividade1"><span>/</span>
+                                    <input class="form-small" type="text" name ="atividade2" id="atividade2"><span>/</span>
+                                    <input class="form-small" type="text" id="atividade3" name="atividade3">
+                                </td>
+                                <td>
+                                    <label for="espec-atv1">Especificação da Atividade</label><br>
+                                    <span class="list-atv-btn">?</span>
+                                    <input class="form-small" type="text" id="espec-atv1" name="espec-atv1"><span>/</span>
+                                    <input class="form-small" type="text" name ="espec-atv2" id="espec-atv2"><span>/</span>
+                                    <input class="form-small" type="text" id="espec-atv3" name="espec-atv3">
+                                </td>
+                                <td>
+                                    <label for="compl-atv1">Compl. da atividade</label><br>
+                                    <span class="list-atv-btn">?</span>
+                                    <input class="form-small" type="text" id="compl-atv1" name="compl-atv1"><span>/</span>
+                                    <input class="form-small" type="text" name ="compl-atv2" id="compl-atv2"><span>/</span>
+                                    <input class="form-small" type="text" id="compl-atv3" name="compl-atv3">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="quantidade">Quantidade</label><br>
+                                    <input type="number" id="quantidade" name="quantidade">
+                                </td>
+                                <td>
+                                    <label for="num-pav">Nº Pav.</label><br>
+                                    <input type="number" id="num-pav" name="num-pav">
+                                </td>
+                                <td>
+                                    <label for="data-inicio">Data de Início</label><br>
+                                    <input type="date" name="data-inicio" id="data-inicio">
+                                </td>
+                                <td>
+                                    <label for="prazo-contrato">Prazo de Contrato</label><br>
+                                    <input type="date" id="prazo-contrato" name="prazo-contrato">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="nhhj">NHHJ/T</label><br>
+                                    <input type="text" id="nhhj" name="nhhj">
+                                </td>
+                                <td id="campo-valor-contrato">
+                                    <label for="valor-contrato">Valor de contrato/honorários</label><br>
+                                    <input type="text" id="valor-contrato" name="valor-contrato">
+                                </td>
+                                <td id="campo-valor-salario">
+                                    <label for="salario">Salário</label><br>
+                                    <input type="text" id="salario" name="salario">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                                    <label for="descricao">Descrição / Informações Complementares</label><br>
+                                    <textarea style="width: 100%; resize: none;" rows="5" id="descricao" name="descricao"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <label for="end-contrato">Endereço</label><br>
+                                    <input style="width: 90%;" type="text" id="end-contrato" name="end-contrato">
+                                </td>
+                                <td>
+                                    <label for="end-num-contrato">Nº</label><br>
+                                    <input type="text" id="end-num-contrato" name="end-num-contrato">
+                                </td>
+                                <td>
+                                    <label for="compl-contrato">Complemento</label><br>
+                                    <input type="text" id="compl-contrato" name="compl-contrato">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="bairro-contrato">Bairro</label><br>
+                                    <input type="text" id="bairro-contrato" name="bairro-contrato">
+                                </td>
+                                <td>
+                                    <label for="cidade-contrato">Município</label><br>
+                                    <input type="text" id="cidade-contrato" name="cidade-contrato">
+                                </td>
+                                <td>
+                                    <label for="uf-contrato">UF</label><br>
+                                    <input type="text" id="uf-contrato" name="uf-contrato" maxlength="2">
+                                </td>
+                                <td>
+                                    <label for="cep-contrato">CEP</label><br>
+                                    <input type="text" id="cep-contrato" name="cep-contrato" maxlength="9">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                                    <input type="checkbox">
+                                    <p>Declaro o cumprimento das normas da ABNT referentes a acessibilidade em atendimento ao parágrafo 1.º art 11 do Decreto 5.296/2004.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="data-art">Data</label><br>
+                                    <input type="date" id="data-art" name="data-art">
+                                </td>
+                                <td>
+                                    <label for="prof-contratado">Profissional Contratado</label><br>
+                                    <input style="width: 90%;" type="text" id="prof-contratado" name="prof-contratado">
+                                </td>
+                                <td colspan="2">
+                                    <label for="contratante">Contratante</label><br>
+                                    <input style="width: 100%;" type="text" value="Contratante" disabled>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <button>Gerar ART</button>
+                </form>
+                <div id="modal-infos">
+                    <div id="modal-content">
+                        <div class="title-header-modal">
+                            <i id="close-btn" class="fa-regular fa-circle-xmark"></i>
+                        </div>
+                    </div>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <h3>Tipo de Registro</h3>
-                        <input type="radio" id="tipo-registro" name="tipo-registro" value="Obra ou Serviço">
-                        <label for="tipo-registro">Obra ou Serviço</label><br>
-                        <input type="radio" id="tipo-registro" name="tipo-registro" value="Desempenho de Cargo ou função">
-                        <label for="tipo-registro">Desempenho de Cargo ou função</label><br>
-                        <input type="radio" id="tipo-registro" name="tipo-registro" value="Múltipla">
-                        <label for="tipo-registro">Multipla</label>
-                    </div>
-                    <div class="col">
-                        <h3>Motivo do Registro</h3>
-                        <input type="radio" id="motivo-registro" name="motivo-registro" value="Novo Contrato">
-                        <label for="motivo-registro">Novo Contrato</label><br>
-                        <input type="radio" id="motivo-registro" name="motivo-registro" value="Oficio/Notificação">
-                        <label for="motivo-registro">Oficio</label><br>
-                        <input type="radio" id="motivo-registro" name="motivo-registro" value="Notificação">
-                        <label for="motivo-registro">Notificação</label><br>
-                        <input type="text" id="num-oficio" name="num-oficio" placeholder="Nº">
-                    </div>
-                    <div class="col">
-                        <h3>Forma de Registro</h3>
-                        <input type="radio" id="forma-registro" name="forma-registro" value="Inicial">
-                        <label for="forma-registro">Inicial</label><br>
-                        <input type="radio" id="forma-registro" name="forma-registro" value="Complementar">
-                        <label for="forma-registro">Complementar</label><br>
-                        <input type="radio" id="forma-registro" name="forma-registro" value="Substituição">
-                        <label for="forma-registro">Substituição</label><br>
-                        <input type="text" id="art-principal" name="art-principal" placeholder="Nº da ART Principal">
-                    </div>
-                    <div class="col">
-                        <h3>Participação Técnica</h3>
-                        <input type="radio" id="part-tecnica" name="part-tecnica" value="Substituição">
-                        <label for="part-tecnica">Individual</label><br>
-                        <input type="radio" id="part-tecnica" name="part-tecnica" value="Co Autor">
-                        <label for="part-tecnica">Co Autor</label><br>
-                        <input type="radio" id="part-tecnica" name="part-tecnica" value="Co Responsável">
-                        <label for="part-tecnica">Co Responsável</label><br>
-                        <input type="radio" id="part-tecnica" name="part-tecnica" value="Equipe">
-                        <label for="part-tecnica">Equipe</label><br>
-                    </div>
-                </div>
-                <div class="row">
-                    <h3>Responsável Técnico</h3>
-                    <div class="row">
-                        <div class="col">
-                            <label for="reg-profissional">Registro Profissional</label><br>
-                            <input type="text" id="reg-profissional" name="reg-profissional" maxlength="10">
-                        </div>
-                        <div class="col">
-                            <label for="nome-profissional">Nome do Profissional</label><br>
-                            <input type="text" id="nome-profissional" name="nome-profissional">
-                        </div>
-                        <div class="col"></div>
-                        <div class="col"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <label>Há Prof. Co-responsável?</label><br>
-                            <input type="radio" id="prof-coresp" name="prof-coresp">
-                            <label for="prof-coresp">Sim</label><br>
-                            <input type="radio" id="prof-coresp" name="prof-coresp">
-                            <label for="prof-coresp">Não</label><br>
-                        </div>
-                        <div class="col">
-                            <label>Há Prof. de empresa vinculada?</label><br>
-                            <input type="radio" id="prof-emp-vinc" name="prof-emp-vinc">
-                            <label for="prof-emp-vinc">Sim</label><br>
-                            <input type="radio" id="prof-emp-vinc" name="prof-emp-vinc">
-                            <label for="prof-emp-vinc">Não</label><br>
-                        </div>
-                        <div class="col">
-                            <label for="cod-ent-class">Cód. de entidade de classe</label><BR>
-                            <select name="cod-ent-class" id="entidade-classe">
-                         
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <label for="num-reg-emp">Nº de registro da empresa</label>
-                            <input type="text" id="num-reg-emp" name="num-reg-emp">
-                        </div>
-                        <div class="col">
-                            <label for="nome-empresa">Nome da empresa</label>
-                            <input type="text" id="nome-empresa" name="nome-empresa">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <h3>Contratante</h3>
-                    <div class="row">
-                        <div class="col">
-                            <label for="nome-contratante">Nome do contratante</label>
-                            <input type="text" id="nome-contratante" name="nome-contratante">
-                        </div>
-                        <div class="col">
-                            <label for="id-contratante">CPF/CNPJ</label>
-                            <input type="text" id="id-contratante" name="id-contratante">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <label for="end-contratante">Endereço</label>
-                            <input type="text" id="end-contratante" name="end-contratante">
-                        </div>
-                        <div class="col">
-                            <label for="num-contratante">Nº</label>
-                            <input type="text" id="num-contratante" name="num-contratante" maxlength="6">
-                        </div>
-                        <div class="col">
-                            <label for="compl-contratante">Complemento</label>
-                            <input type="text" id="compl-contratante" name="compl-contratante">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <label for="bairro-contratante">Bairro</label>
-                            <input type="text" id="bairro-contratante" name="bairro-contratante">
-                        </div>
-                        <div class="col">
-                            <label for="cidade-contratante">Município</label>
-                            <input type="text" id="cidade-contratante" name="cidade-contratante">
-                        </div>
-                        <div class="col">
-                            <label for="uf-contratante">UF</label>
-                            <input type="text" id="uf-contratante" name="uf-contratante" maxlength="2">
-                        </div>
-                        <div class="col">
-                            <label for="cep-contratante">CEP</label>
-                            <input type="text" id="cep-contratante" name="cep-contratante" max="9">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <h3>Dados de Contrato</h3>
-                    <div class="row">
-                        <div class="col">
-                            <label for="num-contrato">Nº Contrato</label><br>
-                            <input type="text" id="num-contrato" name="num-contrato">
-                        </div>
-                        <div class="col">
-                            <label for="ramo">Ramo</label><br>
-                            <select name="ramo" id = "ramo">
-                               
-                            </select>
-                        </div>
-                        <div class="col">
-                            <label for="atividade1">Atividade Técnica</label><br>
-                            <input class="form-small" type="text" id="atividade1" name="atividade1"><span>/</span>
-                            <input class="form-small" type="text" name ="atividade2" id="atividade2"><span>/</span>
-                            <input class="form-small" type="text" id="atividade3" name="atividade3">
-                        </div>
-                        <div class="col">
-                            <label for="espec-atv1">Especificação da Atividade</label><br>
-                            <input class="form-small" type="text" id="espec-atv1" name="espec-atv1"><span>/</span>
-                            <input class="form-small" type="text" name ="espec-atv2" id="espec-atv2"><span>/</span>
-                            <input class="form-small" type="text" id="espec-atv3" name="espec-atv3">
-                        </div>
-                        <div class="col">
-                            <label for="compl-atv1">Compl. da atividade</label><br>
-                            <input class="form-small" type="text" id="compl-atv1" name="compl-atv1"><span>/</span>
-                            <input class="form-small" type="text" name ="compl-atv2" id="compl-atv2"><span>/</span>
-                            <input class="form-small" type="text" id="compl-atv3" name="compl-atv3">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <label for="quantidade">Quantidade</label><br>
-                            <input type="number" id="quantidade" name="quantidade">
-                        </div>
-                        <div class="col">
-                            <label for="num-pav">Nº Pav.</label><br>
-                            <input type="number" id="num-pav" name="num-pav">
-                        </div>
-                        <div class="col">
-                            <label for="data-inicio">Data de Início</label>
-                            <input type="date" name="data-inicio" id="data-inicio">
-                        </div>
-                        <div class="col">
-                            <label for="prazo-contrato">Prazo de Contrato</label><br>
-                            <input type="text" id="prazo-contrato" name="prazo-contrato">
-                        </div>
-                        <div class="col">
-                            <label for="nhhj">NHHJ/T</label><br>
-                            <input type="text" id="nhhj" name="nhhj">
-                        </div>
-                        <div class="col">
-                            <label for="valor-contrato">Valor de contrato/honorários</label><br>
-                            <input type="text" id="valor-contrato" name="valor-contrato">
-                        </div>
-                        <div class="col">
-                            <label for="salario">Salário</label><br>
-                            <input type="text" id="salario" name="salario">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <label for="descricao">Descrição / Informações Complementares</label>
-                        <textarea rows="5"></textarea>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <label for="end-contrato">Endereço</label><br>
-                            <input type="text" id="end-contrato" name="end-contrato">
-                        </div>
-                        <div class="col">
-                            <label for="end-num-contrato">Nº</label><br>
-                            <input type="text" id="end-num-contrato" name="end-num-contrato">
-                        </div>
-                        <div class="col">
-                            <label for="compl-contrato">Complemento</label><br>
-                            <input type="text" id="compl-contrato" name="compl-contrato">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <label for="bairro-contrato">Bairro</label><br>
-                            <input type="text" id="bairro-contrato" name="bairro-contrato">
-                        </div>
-                        <div class="col">
-                            <label for="cidade-contrato">Município</label><br>
-                            <input type="text" id="cidade-contrato" name="cidade-contrato">
-                        </div>
-                        <div class="col">
-                            <label for="uf-contrato">UF</label><br>
-                            <input type="text" id="uf-contrato" name="uf-contrato" maxlength="2">
-                        </div>
-                        <div class="col">
-                            <label for="cep-contrato">CEP</label><br>
-                            <input type="text" id="cep-contrato" name="cep-contrato" maxlength="9">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <input type="checkbox">
-                            <p>Declaro o cumprimento das normas da ABNT referentes a acessibilidade em atendimento ao parágrafo 1.º art 11 do Decreto 5.296/2004.</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <label for="data-art">Data</label><br>
-                            <input type="date" id="data-art" name="data-art">
-                        </div>
-                        <div class="col">
-                            <label for="prof-contratado">Profissional Contratado</label><br>
-                            <input type="text" id="prof-contratado" name="prof-contratado">
-                        </div>
-                        <div class="col">
-                            <label for="contratante">Contratante</label><br>
-                            <input type="text" value="Contratante" disabled>
-                        </div>
-                        <div class="col">
-                            <label for="teste-teste">Teste</label><br>
-                            <input type="text" id="teste-teste" name="teste-teste">
-                        </div>
-                    </div>
-                </div>
-                <button>Gerar ART</button>
-            </form>
+            </div>
         </div>
     </div>
+    <script src="https://kit.fontawesome.com/c6e63ec5a7.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
     <script src="_script/script.js" type="text/javascript"></script>
 

@@ -30,7 +30,7 @@
         </div>
         <div class="container">
             <div class="row">
-                <form method="post" action="art-generator.php">
+                <form method="post" action="art-generator.php" name="form-art" id="form-art">
                     <div class="row">
                         <div class="col fisrt-line">
                             <h3>Tipo de Registro</h3>
@@ -181,6 +181,14 @@
                                     <select name="ramo" id = "ramo">
                                     </select>
                                 </td>
+                                <td>
+                                    <label for="data-inicio">Data de Início</label><br>
+                                    <input type="date" name="data-inicio" id="data-inicio">
+                                </td>
+                                <td>
+                                    <label for="prazo-contrato">Prazo de Contrato</label><br>
+                                    <input type="date" id="prazo-contrato" name="prazo-contrato">
+                                </td>
                             </tr>
                             <tr>
                                 <td>
@@ -215,12 +223,15 @@
                                     <input type="number" id="num-pav" name="num-pav">
                                 </td>
                                 <td>
-                                    <label for="data-inicio">Data de Início</label><br>
-                                    <input type="date" name="data-inicio" id="data-inicio">
-                                </td>
-                                <td>
-                                    <label for="prazo-contrato">Prazo de Contrato</label><br>
-                                    <input type="date" id="prazo-contrato" name="prazo-contrato">
+                                    <label for="unidade">Unidade</label><br>
+                                    <select id="unidade" name="unidade">
+                                        <option value="m²">m²</option>
+                                        <option value="m²">km²</option>
+                                        <option value="m²">hm²</option>
+                                        <option value="m²">dam²</option>
+                                        <option value="m²">dm²</option>
+                                        <option value="m²">ha</option>
+                                    </select>
                                 </td>
                             </tr>
                             <tr>
@@ -240,7 +251,7 @@
                             <tr>
                                 <td colspan="4">
                                     <label for="descricao">Descrição / Informações Complementares</label><br>
-                                    <textarea style="width: 100%; resize: none;" rows="5" id="descricao" name="descricao"></textarea>
+                                    <textarea style="width: 100%; resize: none;" rows="5" id="descricao" name="descricao" maxlength="500"></textarea>
                                 </td>
                             </tr>
                             <tr>
@@ -279,20 +290,6 @@
                                 <td colspan="4">
                                     <input type="checkbox">
                                     <p>Declaro o cumprimento das normas da ABNT referentes a acessibilidade em atendimento ao parágrafo 1.º art 11 do Decreto 5.296/2004.</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label for="data-art">Data</label><br>
-                                    <input type="date" id="data-art" name="data-art">
-                                </td>
-                                <td>
-                                    <label for="prof-contratado">Profissional Contratado</label><br>
-                                    <input style="width: 90%;" type="text" id="prof-contratado" name="prof-contratado">
-                                </td>
-                                <td colspan="2">
-                                    <label for="contratante">Contratante</label><br>
-                                    <input style="width: 100%;" type="text" value="Contratante" disabled>
                                 </td>
                             </tr>
                         </table>

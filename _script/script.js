@@ -1,7 +1,9 @@
 let len = 9;
 let refNumber = parseInt((Math.random() * 9 + 1) * Math.pow(10,len-1), 10);
+const form = document.getElementById('form-art');
 const radioButtons = document.querySelectorAll('input[name="forma-registro"]');
 const radioButtonsSec = document.querySelectorAll('input[name="part-tecnica"]');
+const artType = document.querySelectorAll('input[name="tipo-registro"]');
 const radioButtonsThi = document.querySelectorAll('input[name="tipo-registro"]');
 const artPrincipalInput = document.getElementById('art-principal');
 const artPartTec = document.getElementById('art-part-tec');
@@ -196,6 +198,18 @@ function initialConfig(){
               document.getElementById('campo-valor-contrato').style.visibility = 'visible';
             default:
               break;
+          }
+        });
+      });
+      //Definindo tipo de ART
+      artType.forEach(artType => {
+        artType.addEventListener('change', () => {
+          if (artType.value === 'Obra ou Serviço') {
+            console.log("obra ou serviço");
+            form.action = "art-generator.php";
+          } else {
+            form.action = "art-generator-cargo-funcao.php";
+            console.log("Cargo ou função");
           }
         });
       });

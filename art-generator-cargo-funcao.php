@@ -5,8 +5,6 @@ use Dompdf\Dompdf;
 use Dompdf\options;
 
 //Variaveis
-date_default_timezone_set('America/Sao_Paulo');
-$data = date('m/d/Y', time());
 $nome_profissional = $_POST["nome-profissional"];
 $reg_profissional = $_POST["reg-profissional"];
 $nome_empresa = $_POST["nome-empresa"];
@@ -32,6 +30,7 @@ $data_inicio = $_POST["data-inicio"];
 $prazo_contrato = $_POST["prazo-contrato"];
 $nome_contratante = $_POST["nome-contratante"];
 $descricao = $_POST["descricao"];
+$salario = $_POST["salario"];
 
 $options = new Options;
 $options-> setChroot(__DIR__);
@@ -41,7 +40,7 @@ $dompdf = new Dompdf($options);
 $dompdf-> setPaper("A4");
 $dompdf-> addInfo("Title", "PDF ART Simulado");
 $dompdf-> addInfo("Author", "Simulador ART UNIVASSOURAS");
-$html = file_get_contents("art-template.html");
+$html = file_get_contents("art-template-cargo-funcao.html");
 
 //Replaces
 $html = str_replace([
@@ -69,7 +68,7 @@ $html = str_replace([
     "{{ data-inicio }}",
     "{{ prazo-contrato }}",
     "{{ descricao }}",
-    "{{ data-celebrado }}"
+    "{{ salario }}"
     ], 
     [
     $nome_profissional,
@@ -96,7 +95,7 @@ $html = str_replace([
     $data_inicio,
     $prazo_contrato,
     $descricao,
-    $data],
+    $salario],
     $html);
 $dompdf-> loadHtml($html);
 

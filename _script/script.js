@@ -1,5 +1,3 @@
-let len = 9;
-let refNumber = parseInt((Math.random() * 9 + 1) * Math.pow(10,len-1), 10);
 const form = document.getElementById('form-art');
 const radioButtons = document.querySelectorAll('input[name="forma-registro"]');
 const radioButtonsSec = document.querySelectorAll('input[name="part-tecnica"]');
@@ -156,8 +154,6 @@ preencherDropdown("espec-atv", especificacao_atividade);
 preencherDropdown("compl-atv", complemento);*/
 
 function initialConfig(){
-    document.getElementById('refNumber').innerHTML = (`Nº 2024${refNumber}`);
-    //Mostrar/Esconder Campos text
     radioButtons.forEach(radioButton => {
         radioButton.addEventListener('change', () => {
           if (radioButton.value === 'Inicial') {

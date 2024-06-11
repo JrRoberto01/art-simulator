@@ -5,6 +5,7 @@ use Dompdf\Dompdf;
 use Dompdf\options;
 
 //Variaveis
+$numero_art = random_int(100000000, 999999999);
 $nome_profissional = $_POST["nome-profissional"];
 $reg_profissional = $_POST["reg-profissional"];
 $nome_empresa = $_POST["nome-empresa"];
@@ -44,6 +45,7 @@ $html = file_get_contents("art-template-cargo-funcao.html");
 
 //Replaces
 $html = str_replace([
+    "{{ numero-art }}",
     "{{ nome-profissional }}", 
     "{{ reg-profissional }}",
     "{{ nome-empresa }}",
@@ -71,6 +73,7 @@ $html = str_replace([
     "{{ salario }}"
     ], 
     [
+    $numero_art,
     $nome_profissional,
     $reg_profissional,
     $nome_empresa,

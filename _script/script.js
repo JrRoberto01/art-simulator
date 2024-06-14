@@ -238,3 +238,103 @@ function abrirModalAtv(){
 const preencherLista = document.getElementById('modal-content');
 preencherLista.appendChild(listagemAtividades(atividade));
 initialConfig();
+
+function adicionarOpcoes(modalId, abrirModalBtnId, opcoesListId, opcoesArray, campoClasse) {
+  var modal = document.getElementById(modalId);
+  var abrirModalBtn = document.getElementById(abrirModalBtnId);
+  var spanFechar = modal.getElementsByClassName("close")[0];
+  var opcoesList = document.getElementById(opcoesListId);
+
+  // Adiciona as opções à lista
+  for (var i = 0; i < opcoesArray.length; i++) {
+      var listItem = document.createElement("li");
+      listItem.innerText = opcoesArray[i].codigo + ' - ' + opcoesArray[i].nome;
+      listItem.setAttribute("data-codigo", opcoesArray[i].codigo);
+      opcoesList.appendChild(listItem);
+  }
+
+  abrirModalBtn.onclick = function () {
+      modal.style.display = "flex";
+      
+  }
+
+  spanFechar.onclick = function () {
+      modal.style.display = "none";
+  }
+
+  window.onclick = function (event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  }
+
+  opcoesList.addEventListener("click", function (event) {
+      var fieldValue = event.target.getAttribute("data-codigo"); // Somente o código
+      var fieldCodigo = event.target.getAttribute("data-codigo");
+      var fields = document.querySelectorAll(`.${campoClasse} .opcao`);
+
+      var opcaoJaSelecionada = false;
+
+      for (var i = 0; i < fields.length; i++) {
+          if (fields[i].value === fieldValue) {
+              opcaoJaSelecionada = true;
+              break;
+          }
+      }
+
+      if (!opcaoJaSelecionada) {
+          for (var i = 0; i < fields.length; i++) {
+              if (fields[i].value === "") {
+                  fields[i].value = fieldValue;
+                  fields[i].setAttribute("data-codigo", fieldCodigo);
+                  break;
+              }
+          }
+          modal.style.display = "none";
+      } else {
+          alert("Essa opção já foi selecionada. Por favor, escolha outra.");
+      }
+  });
+
+  // Adiciona funcioonalidade de verificar caso tenha escrito um código repetido
+  var camposOpcao = document.querySelectorAll(`.${campoClasse} .opcao`);
+  for (var i = 0; i < camposOpcao.length; i++) {
+      camposOpcao[i].addEventListener("input", function () {
+          var fieldValue = this.value;
+          var fields = document.querySelectorAll(`.${campoClasse} .opcao`);
+          var opcaoJaSelecionada = false;
+
+          for (var j = 0; j < fields.length; j++) {
+              if (fields[j] !== this && fields[j].value === fieldValue) {
+                  opcaoJaSelecionada = true;
+                  break;
+              }
+          }
+
+          if (opcaoJaSelecionada) {
+              alert("Essa opção já foi selecionada. Por favor, escolha outra.");
+              this.value = "";
+              this.removeAttribute("data-codigo");
+          }
+      });
+  }
+}
+
+// Adiciona evento de limpar para cada seção do formulário
+var botoesLimpar = document.querySelectorAll('.limparCampo');
+for (var i = 0; i < botoesLimpar.length; i++) {
+  botoesLimpar[i].addEventListener('click', function () {
+      var camposOpcao = this.parentNode.querySelectorAll('.opcao');
+      for (var j = camposOpcao.length - 1; j >= 0; j--) {
+          if (camposOpcao[j].value !== "") {
+              camposOpcao[j].value = "";
+              camposOpcao[j].removeAttribute("data-codigo");
+              break;
+          }
+      }
+  });
+}
+
+adicionarOpcoes("modal1", "abrirModalBtn1", "opcoes1", atividade, "modal1");
+adicionarOpcoes("modal2", "abrirModalBtn2", "opcoes2", especificacao_atividade, "modal2");
+adicionarOpcoes("modal3", "abrirModalBtn3", "opcoes3", complemento, "modal3");

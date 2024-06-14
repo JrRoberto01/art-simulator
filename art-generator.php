@@ -102,7 +102,6 @@ $html = str_replace([
     $data],
     $html);
 $dompdf-> loadHtml($html);
-
 //$dompdf-> loadHtmlFile("art-template.html");
 $dompdf -> render();
 $dompdf -> stream("art-document.pdf", ["Attachment" => 0]);

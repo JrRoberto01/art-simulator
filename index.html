@@ -190,27 +190,28 @@
                                     <input type="date" id="prazo-contrato" name="prazo-contrato">
                                 </td>
                             </tr>
-                            <tr>
-                                <td>
+                            <tr>             
+                            
+                            <td id="formulario1" class="modal1">
                                     <label for="atividade1">Atividade Técnica</label><br>
-                                    <span class="list-atv-btn" onclick="abrirModalAtv()">?</span>
-                                    <input class="form-small" type="text" id="atividade1" name="atividade1"><span>/</span>
-                                    <input class="form-small" type="text" name ="atividade2" id="atividade2"><span>/</span>
-                                    <input class="form-small" type="text" id="atividade3" name="atividade3">
+                                    <span class="list-atv-btn" id="abrirModalBtn1">?</span>
+                                    <input class="opcao form-small" type="text" id="atividade1" name="atividade1"><span>/</span>
+                                    <input class="opcao form-small" type="text" name ="atividade2" id="atividade2"><span>/</span>
+                                    <input class="opcao form-small" type="text" id="atividade3" name="atividade3"><span class="list-atv-btn limparCampo">L</span>
                                 </td>
-                                <td>
+                                <td id="formulario2" class="modal2">
                                     <label for="espec-atv1">Especificação da Atividade</label><br>
-                                    <span class="list-atv-btn">?</span>
-                                    <input class="form-small" type="text" id="espec-atv1" name="espec-atv1"><span>/</span>
-                                    <input class="form-small" type="text" name ="espec-atv2" id="espec-atv2"><span>/</span>
-                                    <input class="form-small" type="text" id="espec-atv3" name="espec-atv3">
+                                    <span class="list-atv-btn" id="abrirModalBtn2">?</span>
+                                    <input class="opcao form-small" type="text" id="espec-atv1" name="espec-atv1"><span>/</span>
+                                    <input class="opcao form-small" type="text" name ="espec-atv2" id="espec-atv2"><span>/</span>
+                                    <input class="opcao form-small" type="text" id="espec-atv3" name="espec-atv3"><span class="list-atv-btn limparCampo">L</span>
                                 </td>
-                                <td>
+                                <td id="formulario3" class="modal3">
                                     <label for="compl-atv1">Compl. da atividade</label><br>
-                                    <span class="list-atv-btn">?</span>
-                                    <input class="form-small" type="text" id="compl-atv1" name="compl-atv1"><span>/</span>
-                                    <input class="form-small" type="text" name ="compl-atv2" id="compl-atv2"><span>/</span>
-                                    <input class="form-small" type="text" id="compl-atv3" name="compl-atv3">
+                                    <span class="list-atv-btn" id="abrirModalBtn3">?</span>
+                                    <input class="opcao form-small" type="text" id="compl-atv1" name="compl-atv1"><span>/</span>
+                                    <input class="opcao form-small" type="text" name ="compl-atv2" id="compl-atv2"><span>/</span>
+                                    <input class="opcao form-small" type="text" id="compl-atv3" name="compl-atv3"><span class="list-atv-btn limparCampo">L</span>
                                 </td>
                             </tr>
                             <tr>
@@ -305,6 +306,41 @@
                 </div>
             </div>
         </div>
+
+          
+          <div id="modal1" class="modal">
+            <div id="modal-content" class="modal-content">
+                <div class="title-header-modal">
+                    <span id="close-btn" class="close fa-regular fa-circle-xmark"></span>
+                </div>
+                
+              <ul id="opcoes1">
+            
+              </ul>
+            </div>
+          </div>
+          <div id="modal2" class="modal">
+            <div id="modal-content" class="modal-content">
+                <div class="title-header-modal">
+                    <span id="close-btn" class="close fa-regular fa-circle-xmark"></span>
+                </div>
+                
+              <ul id="opcoes2">
+            
+              </ul>
+            </div>
+          </div>
+          <div id="modal3" class="modal">
+            <div id="modal-content" class="modal-content">
+                <div class="title-header-modal">
+                    <span id="close-btn" class="close fa-regular fa-circle-xmark"></span>
+                </div>
+                
+              <ul id="opcoes3">
+               
+              </ul>
+            </div>
+          </div>
     </div>
     <script src="https://kit.fontawesome.com/c6e63ec5a7.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>

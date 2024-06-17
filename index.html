@@ -197,21 +197,21 @@
                                     <span class="list-atv-btn" id="abrirModalBtn1">?</span>
                                     <input class="opcao form-small" type="text" id="atividade1" name="atividade1"><span>/</span>
                                     <input class="opcao form-small" type="text" name ="atividade2" id="atividade2"><span>/</span>
-                                    <input class="opcao form-small" type="text" id="atividade3" name="atividade3"><span class="list-atv-btn limparCampo">L</span>
+                                    <input class="opcao form-small" type="text" id="atividade3" name="atividade3"><span class="list-atv-btn limparCampo">-</span>
                                 </td>
                                 <td id="formulario2" class="modal2">
                                     <label for="espec-atv1">Especificação da Atividade</label><br>
                                     <span class="list-atv-btn" id="abrirModalBtn2">?</span>
                                     <input class="opcao form-small" type="text" id="espec-atv1" name="espec-atv1"><span>/</span>
                                     <input class="opcao form-small" type="text" name ="espec-atv2" id="espec-atv2"><span>/</span>
-                                    <input class="opcao form-small" type="text" id="espec-atv3" name="espec-atv3"><span class="list-atv-btn limparCampo">L</span>
+                                    <input class="opcao form-small" type="text" id="espec-atv3" name="espec-atv3"><span class="list-atv-btn limparCampo">-</span>
                                 </td>
                                 <td id="formulario3" class="modal3">
                                     <label for="compl-atv1">Compl. da atividade</label><br>
                                     <span class="list-atv-btn" id="abrirModalBtn3">?</span>
                                     <input class="opcao form-small" type="text" id="compl-atv1" name="compl-atv1"><span>/</span>
                                     <input class="opcao form-small" type="text" name ="compl-atv2" id="compl-atv2"><span>/</span>
-                                    <input class="opcao form-small" type="text" id="compl-atv3" name="compl-atv3"><span class="list-atv-btn limparCampo">L</span>
+                                    <input class="opcao form-small" type="text" id="compl-atv3" name="compl-atv3"><span class="list-atv-btn limparCampo">-</span>
                                 </td>
                             </tr>
                             <tr>
@@ -295,7 +295,7 @@
                             </tr>
                         </table>
                     </div>
-                    <button>Gerar ART</button>
+                    <button onclick="buscarNomePorCodigo()">Gerar ART</button>
                 </form>
                 <div id="modal-infos">
                     <div id="modal-content">
@@ -304,8 +304,60 @@
                         </div>
                     </div>
                 </div>
+                <div id="redo-art">
+                    <h2>Obrigado por gerar sua ART</h2>
+                    <p>Em breve você será redirecionado para o documento</p>
+                    <hr>
+                    <button onclick="reloadPage()"><i class="fa-solid fa-rotate-right"></i> Refazer Art</button>
+                </div>
             </div>
         </div>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <h3>Simulador ART | Universidade de Vassouras</h3>
+                    <hr>
+                    <div class="row team">
+                        <div class="user">
+                            <a href="https://github.com/JrRoberto01" target="_blank">
+                                <i class="fa-solid fa-user"></i>
+                                <p>Roberto Junior</p>
+                                <p>Software</p>
+                            </a>
+                        </div>
+                        <div class="user">
+                            <a href="https://github.com/almeida-douglas" target="_blank">
+                                <i class="fa-solid fa-user"></i>
+                                <p>Douglas Almeida</p>
+                                <p>Software</p>    
+                            </a>                            
+                        </div>
+                        <div class="user">
+                            <a href="https://github.com/almeidadiogo0" target="_blank">
+                                <i class="fa-solid fa-user"></i>
+                                <p>Diogo Almeida</p>
+                                <p>Software</p>    
+                            </a>                            
+                        </div>
+                        <div class="user">
+                            <a href="https://www.linkedin.com/in/marcellamp/" target="_blank">
+                                <i class="fa-solid fa-user"></i>
+                                <p>Marcella Maciel</p>
+                                <p>Civil</p>    
+                            </a>                            
+                        </div>
+                        <div class="user">
+                            <a href="https://www.linkedin.com/in/isadoracavalaro/" target="_blank">
+                                <i class="fa-solid fa-user"></i>
+                                <p>Isadora Calavaro</p>
+                                <p>Civil</p>    
+                            </a>                            
+                        </div>
+                    </div>
+                    <p>Projeto desenvolvido apenas para fins acadêmicos com foco no Desafio das Engenharias</p>
+                </div>
+            </div>
+        </footer>
 
           
           <div id="modal1" class="modal">

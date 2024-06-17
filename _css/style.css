@@ -48,6 +48,9 @@ h3{
 .col h3{
     text-align: center;
 }
+form{
+    margin-bottom: 100px;
+}
 .form-small{
     width: 20%;
     border: none !important;
@@ -149,4 +152,53 @@ button{
 }
 #campo-valor-contrato{
     visibility: hidden;
+}
+/*Botao Refazer ART*/
+#redo-art{
+    display: none;
+    text-align: center;
+    padding: 25vh 0;
+    display: flex;
+    flex-direction: column !important;
+    justify-content: center !important;
+}
+
+/*FOOTER*/
+footer{
+    background-color: #c8dbf2;
+    text-align: center;
+}
+footer h3{
+    padding: 25px 0 !important;
+    margin: 0;
+}
+footer ul li{
+    list-style: none;
+}
+footer ul li a{
+    text-decoration: none;
+}
+footer .team{
+    padding: 25px 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+footer .team .user{
+    text-align: center;
+    width: auto;
+}
+footer .team a{
+    text-decoration: none;
+    color: #434343;
+}
+footer .team p{
+    margin: 0;
+    padding: 0;
+}
+footer .team a i{
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 30px;
 }

@@ -7,6 +7,18 @@ const artPrincipalInput = document.getElementById('art-principal');
 const artPartTec = document.getElementById('art-part-tec');
 const modalInfosAtv = document.getElementById('modal-infos');
 const closeBtn = document.getElementById('close-btn');
+let inpuAtv = [
+  document.getElementById('atividade1'),
+  document.getElementById('atividade2'),
+  document.getElementById('atividade3')]
+let inputEspec = [
+  document.getElementById('espec-atv1'),
+  document.getElementById('espec-atv2'),
+  document.getElementById('espec-atv3')]
+let inputCompl = [
+  document.getElementById('compl-atv1'),
+  document.getElementById('compl-atv2'),
+  document.getElementById('compl-atv3')]
 
 const lista_ent_classe = [
     "ABENC – Associação Brasileira de Engenheiros Civis",
@@ -59,10 +71,10 @@ const atividade = [
     { nome: "Vistoria", codigo: '51' }
 ];
 const especificacao_atividade = [
-    { nome: "Aferição", codigo: "01" },
-    { nome: "Aplicação", codigo: "02" },
-    { nome: "Calçamento", codigo: "06" },
-    { nome: "Cálculo", codigo: "07" },
+    { nome: "Aferição", codigo: "1" },
+    { nome: "Aplicação", codigo: "2" },
+    { nome: "Calçamento", codigo: "6" },
+    { nome: "Cálculo", codigo: "7" },
     { nome: "Classificação", codigo: "10" },
     { nome: "Concretagem", codigo: "11" },
     { nome: "Conservação", codigo: "12" },
@@ -95,10 +107,10 @@ const especificacao_atividade = [
     { nome: "Transformação", codigo: "68" }
 ];
 const complemento = [
-  { nome: "Aeroporto", codigo: "03" },
-  { nome: "Aerofotogrametria", codigo: "04" },
-  { nome: "Alvenaria", codigo: "08" },
-  { nome: "Andaime", codigo: "09" },
+  { nome: "Aeroporto", codigo: "3" },
+  { nome: "Aerofotogrametria", codigo: "4" },
+  { nome: "Alvenaria", codigo: "8" },
+  { nome: "Andaime", codigo: "9" },
   { nome: "Aqueduto", codigo: "12" },
   { nome: "Arquitetura", codigo: "13" },
   { nome: "Barragem", codigo: "15" },
@@ -149,9 +161,6 @@ function preencherDropdown(dropdown, lista) {
 
 preencherDropdown("entidade-classe", lista_ent_classe);
 preencherDropdown("ramo", ramo);
-/*preencherDropdown("atividade", atividade);
-preencherDropdown("espec-atv", especificacao_atividade);
-preencherDropdown("compl-atv", complemento);*/
 
 function initialConfig(){
     radioButtons.forEach(radioButton => {
@@ -209,7 +218,9 @@ function initialConfig(){
           }
         });
       });
-
+      
+      form.style.display = 'block';
+      document.getElementById('redo-art').style.display = "none";
 }
 //Modal Listagem
 function listagemAtividades(matriz){
@@ -245,6 +256,7 @@ function adicionarOpcoes(modalId, abrirModalBtnId, opcoesListId, opcoesArray, ca
   var spanFechar = modal.getElementsByClassName("close")[0];
   var opcoesList = document.getElementById(opcoesListId);
 
+  //MODAL
   // Adiciona as opções à lista
   for (var i = 0; i < opcoesArray.length; i++) {
       var listItem = document.createElement("li");
@@ -252,16 +264,12 @@ function adicionarOpcoes(modalId, abrirModalBtnId, opcoesListId, opcoesArray, ca
       listItem.setAttribute("data-codigo", opcoesArray[i].codigo);
       opcoesList.appendChild(listItem);
   }
-
   abrirModalBtn.onclick = function () {
       modal.style.display = "flex";
-      
   }
-
   spanFechar.onclick = function () {
       modal.style.display = "none";
   }
-
   window.onclick = function (event) {
       if (event.target == modal) {
           modal.style.display = "none";
@@ -335,6 +343,48 @@ for (var i = 0; i < botoesLimpar.length; i++) {
   });
 }
 
+//Substituir códigos por valores dos campos
+function buscarNomePorCodigo(){
+  for (let i = 0; i < 3; i++){
+    if(inpuAtv[i]){
+      let codigoDigitadoAtv = inpuAtv[i].value.toUpperCase();
+      let itemEncontradoAtv = atividade.find(item => item.codigo === codigoDigitadoAtv);
+      
+      if(codigoDigitadoAtv){
+        if(itemEncontradoAtv){
+          inpuAtv[i].value = itemEncontradoAtv.codigo + " " + itemEncontradoAtv.nome;
+        }
+      }
+    }
+    if(inputEspec[i]){
+      let codigoDigitadoEspec = inputEspec[i].value.toUpperCase();
+      let itemEncontradoEspec = especificacao_atividade.find(item => item.codigo === codigoDigitadoEspec);
+      
+      if(codigoDigitadoEspec){
+        if(itemEncontradoEspec){
+          inputEspec[i].value = itemEncontradoEspec.codigo + " " + itemEncontradoEspec.nome;
+        }
+      }
+    }
+    if(inputCompl[i]){
+      let codigoDigitadoCompl = inputCompl[i].value.toUpperCase();
+      let itemEncontradoCompl = complemento.find(item => item.codigo === codigoDigitadoCompl);
+      
+      if(codigoDigitadoCompl){
+        if(itemEncontradoCompl){
+          inputCompl[i].value = itemEncontradoCompl.codigo + " " + itemEncontradoCompl.nome;
+        }
+      }
+    }
+  }
+  form.style.display = 'none';
+  document.getElementById('redo-art').style.display = "block";
+}
+
+//Recarregar página
+function reloadPage(){
+  window.location.reload();
+}   
 adicionarOpcoes("modal1", "abrirModalBtn1", "opcoes1", atividade, "modal1");
 adicionarOpcoes("modal2", "abrirModalBtn2", "opcoes2", especificacao_atividade, "modal2");
 adicionarOpcoes("modal3", "abrirModalBtn3", "opcoes3", complemento, "modal3");

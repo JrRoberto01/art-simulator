@@ -33,6 +33,15 @@ $data_inicio = $_POST["data-inicio"];
 $prazo_contrato = $_POST["prazo-contrato"];
 $nome_contratante = $_POST["nome-contratante"];
 $descricao = $_POST["descricao"];
+$input_atv1 = $_POST["atividade1"];
+$input_atv2 = $_POST["atividade2"];
+$input_atv3 = $_POST["atividade3"];
+$input_espec1 = $_POST["espec-atv1"];
+$input_espec2 = $_POST["espec-atv2"];
+$input_espec3 = $_POST["espec-atv3"];
+$input_compl1 = $_POST["compl-atv1"];
+$input_compl2 = $_POST["compl-atv2"];
+$input_compl3 = $_POST["compl-atv3"];
 
 $options = new Options;
 $options-> setChroot(__DIR__);
@@ -71,8 +80,16 @@ $html = str_replace([
     "{{ data-inicio }}",
     "{{ prazo-contrato }}",
     "{{ descricao }}",
-    "{{ data-celebrado }}"
-    ], 
+    "{{ data-celebrado }}",
+    "{{ input-atv1 }}",
+    "{{ input-atv2 }}",
+    "{{ input-atv3 }}",
+    "{{ input-espec1 }}",
+    "{{ input-espec2 }}",
+    "{{ input-espec3 }}",
+    "{{ input-compl1 }}",
+    "{{ input-compl2 }}",
+    "{{ input-compl3 }}"], 
     [
     $numero_art,
     $nome_profissional,
@@ -99,7 +116,16 @@ $html = str_replace([
     $data_inicio,
     $prazo_contrato,
     $descricao,
-    $data],
+    $data,
+    $input_atv1,
+    $input_atv2,
+    $input_atv3,
+    $input_espec1,
+    $input_espec2,
+    $input_espec3,
+    $input_compl1,
+    $input_compl2,
+    $input_compl3],
     $html);
 $dompdf-> loadHtml($html);
 //$dompdf-> loadHtmlFile("art-template.html");

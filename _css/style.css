@@ -202,3 +202,57 @@ footer .team a i{
     padding: 15px;
     border-radius: 30px;
 }
+@media only screen and (max-width: 800px) {
+    table {
+        border: none;
+    }
+
+    table tr {
+        display: block;
+        margin-bottom: 10px;
+        border: 1px;
+    }
+
+    table th,
+    table td {
+        display: block;
+        text-align: left;
+    }
+
+    table td {
+        position: relative;
+        padding: 8px 8px 20px; /* Espaçamento para cada célula */
+    }
+
+    table td label {
+        display: flex;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    table td input[type="text"],
+    table td select {
+        width: 80%; /* Ajuste para o input ocupar quase toda a largura */
+        margin-bottom: 10px;
+    }
+
+    .row{
+        flex-direction: column;
+    }
+
+    #formulario1 input{
+        width: 20%;
+    }
+    #formulario2 input{
+        width: 20%;
+    }
+    #formulario3 input{
+        width: 20%;
+    }
+    .modal{
+        width: 100%;
+    }
+    #modal-content{
+        width: 70%;
+    }
+}

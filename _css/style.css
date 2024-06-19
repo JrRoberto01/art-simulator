@@ -202,7 +202,7 @@ footer .team a i{
     padding: 15px;
     border-radius: 30px;
 }
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1200px) {
     table {
         border: none;
     }
@@ -236,9 +236,6 @@ footer .team a i{
         margin-bottom: 10px;
     }
 
-    .row{
-        flex-direction: column;
-    }
 
     #formulario1 input{
         width: 20%;
@@ -255,4 +252,14 @@ footer .team a i{
     #modal-content{
         width: 70%;
     }
+    #content .row{
+        flex-direction: column;
+}
+
+}
+
+@media only screen and (max-width: 774px) {
+    header .row, footer .row{
+    flex-direction: column;
+}
 }

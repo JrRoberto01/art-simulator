@@ -42,6 +42,9 @@ $input_espec3 = $_POST["espec-atv3"];
 $input_compl1 = $_POST["compl-atv1"];
 $input_compl2 = $_POST["compl-atv2"];
 $input_compl3 = $_POST["compl-atv3"];
+$quantidade = $_POST["quantidade"];
+$num_pav = $_POST["num-pav"];
+$unidade = $_POST["unidade"];
 
 $options = new Options;
 $options-> setChroot(__DIR__);
@@ -89,7 +92,10 @@ $html = str_replace([
     "{{ input-espec3 }}",
     "{{ input-compl1 }}",
     "{{ input-compl2 }}",
-    "{{ input-compl3 }}"], 
+    "{{ input-compl3 }}",
+    "{{ quantidade }}",
+    "{{ num-pav }}",
+    "{{ unidade }}"], 
     [
     $numero_art,
     $nome_profissional,
@@ -125,7 +131,10 @@ $html = str_replace([
     $input_espec3,
     $input_compl1,
     $input_compl2,
-    $input_compl3],
+    $input_compl3,
+    $quantidade,
+    $num_pav,
+    $unidade],
     $html);
 $dompdf-> loadHtml($html);
 //$dompdf-> loadHtmlFile("art-template.html");

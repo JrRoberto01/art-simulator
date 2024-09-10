@@ -167,8 +167,10 @@ function initialConfig(){
         radioButton.addEventListener('change', () => {
           if (radioButton.value === 'Inicial') {
             artPrincipalInput.style.display = 'none';
+            artPrincipalInput.required = false;
           } else {
             artPrincipalInput.style.display = 'block';
+            artPrincipalInput.required = false;
           }
         });
       });
@@ -176,8 +178,10 @@ function initialConfig(){
         radioButtonsSec.addEventListener('change', () => {
           if (radioButtonsSec.value === 'Individual') {
             artPartTec.style.display = 'none';
+            artPartTec.required = false;
           } else {
             artPartTec.style.display = 'block';
+            artPartTec.required = true;
           }
         });
       });
@@ -266,13 +270,16 @@ function adicionarOpcoes(modalId, abrirModalBtnId, opcoesListId, opcoesArray, ca
   }
   abrirModalBtn.onclick = function () {
       modal.style.display = "flex";
+      document.body.classList.add('no-scroll');
   }
   spanFechar.onclick = function () {
       modal.style.display = "none";
+      document.body.classList.remove('no-scroll');
   }
   window.onclick = function (event) {
       if (event.target == modal) {
           modal.style.display = "none";
+          document.body.classList.remove('no-scroll');
       }
   }
 
@@ -299,6 +306,7 @@ function adicionarOpcoes(modalId, abrirModalBtnId, opcoesListId, opcoesArray, ca
               }
           }
           modal.style.display = "none";
+          document.body.classList.remove('no-scroll');
       } else {
           alert("Essa opção já foi selecionada. Por favor, escolha outra.");
       }
@@ -385,6 +393,9 @@ function buscarNomePorCodigo(){
 function reloadPage(){
   window.location.reload();
 }   
+
+
+
 adicionarOpcoes("modal1", "abrirModalBtn1", "opcoes1", atividade, "modal1");
 adicionarOpcoes("modal2", "abrirModalBtn2", "opcoes2", especificacao_atividade, "modal2");
 adicionarOpcoes("modal3", "abrirModalBtn3", "opcoes3", complemento, "modal3");

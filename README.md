@@ -25,11 +25,8 @@
 ###
 
 <h2 align="left">Desenvolvedores</h2>
-
-###
-
-<div align="center">
-  <img height="500" src="https://prnt.sc/o9g6ujwHcqht"  />
-</div>
-
-###
+<ul>
+  <li>Roberto Jr</li>
+  <li>Douglas Almeida</li>
+  <li>Diogo Almeida</li>
+</ul>

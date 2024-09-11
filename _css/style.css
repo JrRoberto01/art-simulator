@@ -32,6 +32,9 @@ header .col:last-child{
     font-size: 1.5em;
     align-items: center;
 }
+.required-label{
+    color: darkred;
+}
 /*Formulário*/
 .col{
     padding: 0;
@@ -133,6 +136,7 @@ button{
 #modal-content ul li{
     list-style: none;
     cursor: pointer;
+    padding: 3px 0;
 }
 .title-header-modal h3{
     padding: 0;

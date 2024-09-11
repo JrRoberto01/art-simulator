@@ -370,7 +370,7 @@ function buscarNomePorCodigo(){
       
       if(codigoDigitadoEspec){
         if(itemEncontradoEspec){
-          inputEspec[i].value = itemEncontradoEspec.codigo + " " + itemEncontradoEspec.nome;
+          inputEspec[i].value = itemEncontradoEspec.codigo + " " + itemEncontradoEspec.nome + " > ";
         }
       }
     }
